@@ -1,8 +1,10 @@
 // Build Thought model
 import mongoose from 'mongoose';
 import reactionSchema from './Reaction.js';
+import { formatDate } from '../utils/formatDate.js';
 const { Schema, model } = mongoose;
 
+// Create content for the thought (1-280 characters) including: username, timestamps and an array of reactions
 const thoughtSchema = new Schema(
     {
         thoughtText: {
@@ -14,7 +16,7 @@ const thoughtSchema = new Schema(
         createdAt: {
             type: Date,
             default: Date.now,
-            get: timestamp => new Date(timestamp).toLocaleString(),
+            get: formatDate     // formatDate.js in utils folder
         },
         username: {
             type: String,
@@ -24,14 +26,14 @@ const thoughtSchema = new Schema(
     },
     {
         toJSON: {
-            virtuals: true,
-            getters: true,
+            virtuals: true,     // Enable virtual fields like 'reactionCount'
+            getters: true,      // Enable custom formatting for timestamps
         },
-        id: false,
+        id: false,      // Prevent duplicate 'id' from being created
     }
 );
 
-// Virtual to get reaction count
+// Virtual field to return the number of reactions from other users
 thoughtSchema.virtual('reactionCount').get(function() {
     return this.reactions.length;
 });

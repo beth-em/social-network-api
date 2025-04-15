@@ -1,7 +1,10 @@
-// Build reaction schema 
+// Build reaction schema for use in Thought model
 import mongoose from 'mongoose';
+import { formatDate } from '../utils/formatDate.js';
+
 const { Schema, Types } = mongoose;
 
+// Add unique ID's, username and timestamps for users who created each of those entries
 const reactionSchema = new Schema(
     {
         reactionId: {
@@ -20,14 +23,14 @@ const reactionSchema = new Schema(
         createdAt: {
             type: Date,
             default: Date.now,
-            get: timestamp => new Date(timestamp).toLocaleString(),
+            get: formatDate    // formatDate.js in utils folder
         },
     },
     {
         toJSON: {
-            getters: true,
+            getters: true,    // Enable use of formatDate
         },
-        id: false,
+        id: false,            // Prevent Mongoose from creating a duplicate 'id' field
     }
 );
 

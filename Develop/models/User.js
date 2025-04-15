@@ -1,8 +1,9 @@
-// Build Mongoose Models for Users
+// Build Mongoose Model for users
 import mongoose from 'mongoose';
+
 const { Schema, model } = mongoose;
 
-// User schema
+// Create user schema including, unique and required! username, email and references to Thought ID's and other User ID's (friends list)
 const userSchema = new Schema (
     {
         username: {
@@ -11,7 +12,7 @@ const userSchema = new Schema (
             required: true,
             trim: true,
         },
-        email: {
+        email: {    // Email must me unique: 'true' and match a basic pattern e.g. "/.+@.+\\..+/"
             type: String,
             unique: true,
             required: true,
@@ -32,13 +33,13 @@ const userSchema = new Schema (
     },
     {
         toJSON: {
-            virtuals: true,
+            virtuals: true, // Enable use of `friendCount` virtual
         },
-        id: false,
+        id: false,      // Prevent Mongoose from creating duplicate 'id' field
     }
 );
 
-// Virtual to get a friend count
+// Virtual field to return the number of friends a uswer has
 userSchema.virtual('friendCount').get(function() {
     return this.friends.length;
 });
