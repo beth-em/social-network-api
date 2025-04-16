@@ -31,10 +31,10 @@ As a user, I can see thoughts and user information that has been saved to my loc
 This project is licensed under the MIT license.
 
 ## Screenshots
-[!MongoDB: SocialDB showing stored date for Thoughts and Users](/Users/elizabethmurillo/social-network-api/Develop/assets/Screenshot 2025-04-15 at 9.47.34 PM.png)
-[!Insomnia: Find All Users Request example](/Users/elizabethmurillo/social-network-api/Develop/assets/Screenshot 2025-04-15 at 9.52.02 PM.png)
-[!Insomnia: Create a Thought example](/Users/elizabethmurillo/social-network-api/Develop/assets/Screenshot 2025-04-15 at 9.59.13 PM.png)
-[!Insomnia: Create a Reaction example](/Users/elizabethmurillo/social-network-api/Develop/assets/Screenshot 2025-04-15 at 10.00.03 PM.png)
+[!MongoDB: SocialDB showing stored date for Thoughts and Users](/Users/elizabethmurillo/social-network-api/Develop/assets/Screenshot - MongoDB.png)
+[!Insomnia: Find All Users Request example](/Users/elizabethmurillo/social-network-api/Develop/assets/Screenshot - Find All Users.png)
+[!Insomnia: Create a Thought example](/Users/elizabethmurillo/social-network-api/Develop/assets/Screenshot - Create a Thought.png)
+[!Insomnia: Create a Reaction example](/Users/elizabethmurillo/social-network-api/Develop/assets/Screenshot - Create a Reaction.png)
 
 ## Links
 * GitHub Repo: https://github.com/beth-em/social-network-api.git
