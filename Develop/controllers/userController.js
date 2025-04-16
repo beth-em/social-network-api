@@ -27,7 +27,15 @@ async getUserById(req, res) {
         res.status(500).json(err);
     }
 },
-
+// POST create a new user
+async createUser(req, res) {
+    try {
+        const user = await User.create(req.body);
+        res.json(user);
+    } catch (err) {
+        res.status(400).json(err);
+        }
+},
 // PUT update user by _id
 async updateUser(req, res) {
     try {

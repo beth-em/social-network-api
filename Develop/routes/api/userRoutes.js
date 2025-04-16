@@ -11,9 +11,9 @@ router.route('/')
 
 // /api/users/:userId
 router.route('/:userId')
-    .get(userController.getAllUsers)
-    .put(userController.updateUsers)
-    .delete(userController.deleteUsers);
+    .get(userController.getUserById)
+    .put(userController.updateUser)
+    .delete(userController.deleteUser);
 
 // /api/users/:userId/friends/:friendId
 router.route('/:userId/friends/:friendId')

@@ -14,7 +14,7 @@ async getAllThoughts(req, res) {
         }
     },
 // GET single thought by ID
-async getThoughtById(res, req) {
+async getThoughtById(req, res) {
     try {
         const thought = await Thought.findById(req.params.thoughtId);
 
@@ -44,7 +44,7 @@ async createThought(req, res) {
             return res.status(404).json({ message: 'Thought created, but no user found with that ID' });
         }
 
-        res.json(newthought);
+        res.json(newThought);
     } catch (err) {
         res.status(400).json(err);
         }
