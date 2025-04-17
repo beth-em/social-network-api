@@ -38,4 +38,4 @@ This project is licensed under the MIT license.
 
 ## Links
 * GitHub Repo: https://github.com/beth-em/social-network-api.git
-* Walkthrought Video Link:
+* Walkthrought Video Link: https://drive.google.com/file/d/10ExImeDRXS0qcirZ5wbALAQn0aHc39pU/view?usp=drive_link
